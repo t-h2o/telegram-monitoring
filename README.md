@@ -6,13 +6,25 @@
 
 Monitoring with a telegram bot
 
+## take a talk with the bot father
+
+set this commands
+```
+disk - disk usage
+cpu - cpu load
+stats - uptime and ram
+who - who is connected
+```
 
 ## Put your token
 
 replace the  `TOKEN` with the BotFather's token
+when you send message to the bot when he is running,
+the script will print your chat ID
 
 ```
-echo API_KEY = \"TOKEN\" >> bot/constants.py
+echo telegrambot = \'TOKEN\' >> bot/tokens.py
+echo adminchatid = \[chat_id\] >> bot/tokens.py
 ```
 
 ## Notifications
