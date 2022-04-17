@@ -1,3 +1,5 @@
+#	/usr/bot/main.py
+
 import subprocess
 from tokens import *
 import matplotlib
@@ -25,11 +27,11 @@ graphstart = datetime.now()
 
 def send_info(chat_id, info_type):
     bot.sendChatAction(chat_id, 'typing')
-    reply = subprocess.check_output(['./getinfo.sh', info_type])
+    reply = subprocess.check_output(['/usr/bot/getinfo.sh', info_type])
     bot.sendMessage(chat_id, reply, disable_web_page_preview=True)
 
 def send_alert(chat_id, info_type):
-    reply = subprocess.check_output(['./getinfo.sh', info_type])
+    reply = subprocess.check_output(['/usr/bot/getinfo.sh', info_type])
     bot.sendMessage(chat_id, reply, disable_web_page_preview=True)
 
 

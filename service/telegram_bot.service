@@ -1,14 +1,13 @@
-user_bot=root
-path_bot=/root/.bot-telegram/echo.py
+#	/etc/systemd/system/telegram_bot.service
 
 [Unit]
-Description=Debian echo in telegram
-After=network.target
-StartLimitIntervalSec=0
+Description=bot for monitoring
+After=multi-user.target
 
 [Service]
 Type=simple
 Restart=always
-RestartSec=1
-User=$user_bot
-ExecStart=python3 $path_bot
+ExecStart=/usr/bin/python3 /usr/bot/main.py
+
+[Install]
+WantedBy=multi-user.target

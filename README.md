@@ -27,30 +27,12 @@ echo telegrambot = \'TOKEN\' >> bot/tokens.py
 echo adminchatid = \[chat_id\] >> bot/tokens.py
 ```
 
-## Notifications
+## System daemon
 
-### new connection
-
-When you connect via ssh, this script run once,
-```/etc/ssh/sshrc```, you can code inside a send message to the admin.
-
-## Monitoring
-
-Send few informations about state of computer
-
-## Command
-
-### uptime
-
-indicate how many time the machine is running
-
-### ram
-
-indicate how many space is used
-
-### df
-
-display xx% is fill the ```/home```
 ```
-df | grep /home | awk '{print $5}'
+mv ./service/telegram_bot.service /etc/systemd/system/
+cp -r ./bot /usr/
+systemclt daemon-reload
+systemclt start telegram-bot
+systemclt enable telegram-bot
 ```
