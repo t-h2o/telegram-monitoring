@@ -1,3 +1,5 @@
+#!/bin/python3
+
 #	/usr/bot/main.py
 
 import subprocess
